@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /info/dtxtut
+# catalog-date 2007-02-01 21:12:02 +0100
+# catalog-license lppl
+# catalog-version undef
 Name:		texlive-dtxtut
 Version:	20070201
 Release:	1
@@ -27,6 +33,7 @@ their homebrewed classes and style files.
 %doc %{_texmfdistdir}/doc/latex/dtxtut/dtxtut.tex
 %doc %{_texmfdistdir}/doc/latex/dtxtut/skeleton.dtx
 %doc %{_texmfdistdir}/doc/latex/dtxtut/skeleton.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -37,3 +44,5 @@ their homebrewed classes and style files.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
