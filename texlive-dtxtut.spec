@@ -16,8 +16,6 @@ Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dtxtut.doc.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 This tutorial is intended for advanced LaTeX2e users who want
@@ -33,7 +31,6 @@ their homebrewed classes and style files.
 %doc %{_texmfdistdir}/doc/latex/dtxtut/dtxtut.tex
 %doc %{_texmfdistdir}/doc/latex/dtxtut/skeleton.dtx
 %doc %{_texmfdistdir}/doc/latex/dtxtut/skeleton.ins
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -44,5 +41,3 @@ their homebrewed classes and style files.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
