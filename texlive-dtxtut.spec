@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-dtxtut
 Version:	20070201
-Release:	8
+Release:	9
 Summary:	Tutorial on writing .dtx and .ins files
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/info/dtxtut
