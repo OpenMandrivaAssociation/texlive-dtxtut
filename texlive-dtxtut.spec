@@ -1,6 +1,6 @@
 Name:		texlive-dtxtut
 Version:	38375
-Release:	1
+Release:	2
 Summary:	Tutorial on writing .dtx and .ins files
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/info/dtxtut
