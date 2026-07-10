@@ -1,37 +1,24 @@
-Name:		texlive-dtxtut
-Version:	69587
-Release:	1
+%global tl_name dtxtut
+%global tl_revision 69587
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.4
+Release:	%{tl_revision}.1
 Summary:	Tutorial on writing .dtx and .ins files
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/info/dtxtut
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dtxtut.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dtxtut.doc.r%{version}.tar.xz
+License:	lppl1.3c
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/dtxtut.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/dtxtut.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This tutorial is intended for advanced LaTeX2e users who want
-to learn how to create .ins and .dtx files for distributing
-their homebrewed classes and style files.
+This tutorial is intended for advanced LaTeX2e users who want to learn
+how to create .ins and .dtx files for distributing their homebrewed
+classes and package files.
 
-#-----------------------------------------------------------------------
-%files
-%doc %{_texmfdistdir}/doc/latex/dtxtut/README
-%doc %{_texmfdistdir}/doc/latex/dtxtut/cskeleton.dtx
-%doc %{_texmfdistdir}/doc/latex/dtxtut/cskeleton.ins
-%doc %{_texmfdistdir}/doc/latex/dtxtut/dtxtut.pdf
-%doc %{_texmfdistdir}/doc/latex/dtxtut/dtxtut.tex
-%doc %{_texmfdistdir}/doc/latex/dtxtut/skeleton.dtx
-%doc %{_texmfdistdir}/doc/latex/dtxtut/skeleton.ins
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar doc %{buildroot}%{_texmfdistdir}
